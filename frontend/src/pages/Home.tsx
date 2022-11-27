@@ -1,5 +1,9 @@
-const Home = () => {
-  return <div>Home</div>;
-};
+import { Banner } from "../components/unshared";
 
-export default Home;
+export const Home = () => {
+  return (
+    <>
+      <Banner />
+    </>
+  );
+};

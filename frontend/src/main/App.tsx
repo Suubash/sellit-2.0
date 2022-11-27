@@ -1,13 +1,15 @@
 // All @ROUTES here
-import { Navbar } from "../components/shared";
-import { Banner } from "../components/unshared";
+import { Layout } from "../layouts";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "../pages";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Banner />
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 
