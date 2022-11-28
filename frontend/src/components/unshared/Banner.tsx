@@ -1,3 +1,9 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "../../styles/swiper.css";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
+
 export const Banner = () => {
   return (
     <section className="relative bg-[url(https://images.unsplash.com/photo-1633113215844-b2ddc0411724?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)] bg-cover bg-center bg-no-repeat">
