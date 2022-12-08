@@ -7,7 +7,7 @@ export const Layout = () => {
     <React.Fragment>
       <Navbar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };

@@ -1,2 +1,2 @@
-export * from "./Test";
 export * from "./Banner";
+export * from "./Category";
