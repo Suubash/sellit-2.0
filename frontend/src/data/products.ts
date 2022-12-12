@@ -1,20 +1,21 @@
 export const products = [
   {
     id: "1",
-    title: "Microsoft Surface 2 (2022)",
-    image:
-      "https://images.pexels.com/photos/1038628/pexels-photo-1038628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    price: "NPR 1,20,000",
-    location: { place: "Kathmandu, Nepal", street: "Karmahana" },
-  },
-  {
-    id: "2",
     title: "Samsung galaxy S22 ultra",
     image:
       "https://cdn.dxomark.com/wp-content/uploads/medias/post-106688/Samsung-Galaxy-S22-Ultra-Yoast-image-packshot-review-Recovered-1.jpg",
     price: "NPR 1,75,000",
     location: { place: "Kathmandu, Nepal", street: "Karmahana" },
   },
+  {
+    id: "2",
+    title: "Microsoft Surface 2 (2022)",
+    image:
+      "https://images.pexels.com/photos/1038628/pexels-photo-1038628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: "NPR 1,20,000",
+    location: { place: "Kathmandu, Nepal", street: "Karmahana" },
+  },
+
   {
     id: "3",
     title: "Macbook Pro M2",

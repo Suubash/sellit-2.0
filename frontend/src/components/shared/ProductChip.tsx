@@ -12,7 +12,9 @@ export const ProductChip = (props: IProduct) => {
           alt={title}
         />
       </div>
-      <p className="font-semibold pr-2 select-none line-clamp-2">{title}</p>
+      <p className="font-semibold pr-2 select-none line-clamp-2 leading-tight tracking-tight">
+        {title}
+      </p>
     </div>
   );
 };
