@@ -7,7 +7,8 @@ export const Layout = () => {
     <React.Fragment>
       <Navbar />
       <Outlet />
-      {/* <Footer /> */}
+      <div className="py-10 w-full"></div>
+      <Footer />
     </React.Fragment>
   );
 };

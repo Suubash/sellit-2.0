@@ -18,8 +18,19 @@ export const Home = () => {
       </div>
 
       <div className="text-light">
-        <h2 className="text-light text-xl font-black  pt-10 padding-custom-x pb-3 tracking-tight leading-tight">
+        <h2 className="text-xl font-black  pt-10 padding-custom-x pb-3 tracking-tight leading-tight">
           Featured Products
+        </h2>
+        <div className="flex gap-4 overflow-auto padding-custom scrollbar-hide">
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </div>
+      </div>
+
+      <div className="text-light">
+        <h2 className="text-xl font-black  pt-10 padding-custom-x pb-3 tracking-tight leading-tight">
+          Near You
         </h2>
         <div className="flex gap-4 overflow-auto padding-custom scrollbar-hide">
           {products.map((product) => (
