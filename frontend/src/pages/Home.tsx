@@ -9,7 +9,10 @@ export const Home = () => {
           <Category key={category.id} {...category} />
         ))}
       </div>
-      <div className="padding-custom text-3xl font-black">Fresh Deals</div>
+      <p className="padding-custom font-black text-light select-none cursor-pointer text-2xl">
+        Fresh Deals
+      </p>
+      <div className="h-[200vh]"></div>
       {/* <Banner /> */}
     </div>
   );

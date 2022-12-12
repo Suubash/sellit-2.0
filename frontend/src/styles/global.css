@@ -4,12 +4,16 @@
 
 @layer base {
   html {
-    @apply bg-white;
+    @apply bg-dark;
   }
 }
 
 @layer components {
   .padding-custom {
     @apply px-6 py-3;
+  }
+
+  .icon-solid {
+    @apply w-7 text-light;
   }
 }
