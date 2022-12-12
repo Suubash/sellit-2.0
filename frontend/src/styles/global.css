@@ -10,7 +10,15 @@
 
 @layer components {
   .padding-custom {
-    @apply px-6 py-3;
+    @apply px-3 py-3;
+  }
+
+  .padding-custom-x {
+    @apply px-3;
+  }
+
+  .padding-custom-y {
+    @apply py-3;
   }
 
   .icon-solid {

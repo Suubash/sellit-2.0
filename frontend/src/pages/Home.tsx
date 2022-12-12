@@ -1,4 +1,6 @@
+import { ProductChip } from "../components/shared";
 import { Banner, Category } from "../components/unshared";
+import { products } from "../data/products";
 import { categories } from "../data/categories";
 
 export const Home = () => {
@@ -9,11 +11,11 @@ export const Home = () => {
           <Category key={category.id} {...category} />
         ))}
       </div>
-      <p className="padding-custom font-black text-light select-none cursor-pointer text-2xl">
-        Fresh Deals
-      </p>
-      <div className="h-[200vh]"></div>
-      {/* <Banner /> */}
+      <div className="pt-8 padding-custom-x grid grid-cols-2 gap-2">
+        {products.map((product) => (
+          <ProductChip key={product.id} {...product} />
+        ))}
+      </div>
     </div>
   );
 };
