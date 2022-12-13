@@ -1,4 +1,4 @@
-import { FunnelIcon, Cog6ToothIcon, BellIcon } from "@heroicons/react/24/solid";
+import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 
 export const Navbar = () => {
   return (
@@ -10,9 +10,7 @@ export const Navbar = () => {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <BellIcon className="icon-solid" />
-          <FunnelIcon className="icon-solid" />
-          <Cog6ToothIcon className="icon-solid" />
+          <ShoppingCartIcon className="icon-solid" />
         </div>
       </div>
     </header>
