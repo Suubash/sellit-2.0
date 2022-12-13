@@ -11,14 +11,14 @@ export const Home = () => {
           <Category key={category.id} {...category} />
         ))}
       </div>
-      <div className="pt-8 padding-custom-x grid grid-cols-2 gap-2">
+      <div className="pt-10 padding-custom-x grid grid-cols-2 gap-2">
         {products.map((product) => (
           <ProductChip key={product.id} {...product} />
         ))}
       </div>
 
-      <div className="text-light">
-        <h2 className="text-xl font-black  pt-10 padding-custom-x pb-3 tracking-tight leading-tight">
+      <div className="text-light pt-10">
+        <h2 className="text-xl font-black padding-custom-x pb-3 tracking-tight leading-tight">
           Featured Products
         </h2>
         <div className="flex gap-4 overflow-auto padding-custom scrollbar-hide">
@@ -28,8 +28,8 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="text-light">
-        <h2 className="text-xl font-black  pt-10 padding-custom-x pb-3 tracking-tight leading-tight">
+      <div className="text-light pt-10">
+        <h2 className="text-xl font-black padding-custom-x pb-3 tracking-tight leading-tight">
           Near You
         </h2>
         <div className="flex gap-4 overflow-auto padding-custom scrollbar-hide">
