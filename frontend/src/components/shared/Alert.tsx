@@ -9,16 +9,6 @@ interface IAlert {
 export const Alert = (props: IAlert) => {
   const { type, message } = props;
 
-  // `flex p-4 mb-4 rounded-sm ${
-  //   type === "success"
-  //     ? "bg-green-600/20"
-  //     : type === "warning"
-  //     ? "bg-yellow-600/20"
-  //     : type === "danger"
-  //     ? "bg-red-600/20"
-  //     : ""
-  // }`
-
   return (
     <div
       className={cn(
