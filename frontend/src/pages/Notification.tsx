@@ -1,4 +1,4 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { Alert } from "../components/shared";
 
 export const Notification = () => {
   return (
@@ -7,7 +7,7 @@ export const Notification = () => {
         <h2 className="text-xl font-black pb-3 tracking-tight leading-tight">
           Notifications
         </h2>
-        <div className="bg-dark-tertiary p-4 rounded-sm tracking-tight flex justify-between gap-2">
+        {/* <div className="bg-dark-tertiary p-4 rounded-sm tracking-tight flex justify-between gap-2">
           <p className="line-clamp-2 flex-grow">
             Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Non, deleniti quae. Provident iste, labore optio
@@ -17,7 +17,32 @@ export const Notification = () => {
           <div>
             <XMarkIcon className="w-5" />
           </div>
-        </div>
+        </div> */}
+
+        <Alert
+          message={
+            "A simple info alert with an example. Give it a click if you like."
+          }
+          // type="success"
+        />
+        <Alert
+          message={
+            "A simple info alert with an example. Give it a click if you like."
+          }
+          type="success"
+        />
+        <Alert
+          message={
+            "A simple info alert with an example. Give it a click if you like."
+          }
+          type="warning"
+        />
+        <Alert
+          message={
+            "A simple info alert with an example. Give it a click if you like."
+          }
+          type="danger"
+        />
       </div>
     </div>
   );
