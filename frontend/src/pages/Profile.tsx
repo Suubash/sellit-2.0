@@ -1,4 +1,5 @@
 import { MapPinIcon } from "@heroicons/react/24/solid";
+import { Button } from "../components/shared/Button";
 
 export const Profile = () => {
   return (
@@ -31,9 +32,7 @@ export const Profile = () => {
           SellitID: <span className="text-light-secondary">suubash5525</span>
         </div>
         <div className="pt-10">
-          <button className="w-full bg-accent/80 text-dark rounded-sm h-14 font-semibold select-none">
-            Sell Item
-          </button>
+          <Button>Sell Item</Button>
         </div>
 
         <div className="pt-10">

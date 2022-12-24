@@ -1,4 +1,5 @@
 import { MapPinIcon, UserIcon } from "@heroicons/react/24/solid";
+import { Button } from "../components/shared/Button";
 
 export const ProductView = () => {
   return (
@@ -24,12 +25,8 @@ export const ProductView = () => {
       </div>
 
       <div className="pt-10 space-y-2">
-        <button className="w-full bg-accent/80 text-dark rounded-sm h-14 font-semibold select-none">
-          Buy Now
-        </button>
-        <button className="w-full bg-dark-secondary text-light rounded-sm h-14 font-semibold select-none">
-          Cancel
-        </button>
+        <Button>Buy Now</Button>
+        <Button variant="secondary">Cancel</Button>
       </div>
 
       <div className="pt-10">
