@@ -1,7 +1,14 @@
 // All @ROUTES here
 import { Layout } from "../layouts";
 import { Routes, Route } from "react-router-dom";
-import { Home, ProductView, Search, Profile, Notification } from "../pages";
+import {
+  Home,
+  ProductView,
+  Search,
+  Profile,
+  Notification,
+  Register,
+} from "../pages";
 
 function App() {
   return (
@@ -12,6 +19,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/register" element={<Register />} />
       </Route>
     </Routes>
   );
