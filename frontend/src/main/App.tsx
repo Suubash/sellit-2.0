@@ -9,19 +9,23 @@ import {
   Notification,
   Register,
 } from "../pages";
+import { store } from "../redux/store";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<ProductView />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/notification" element={<Notification />} />
-        <Route path="/register" element={<Register />} />
-      </Route>
-    </Routes>
+    <Provider store={store}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<ProductView />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+      </Routes>
+    </Provider>
   );
 }
 
