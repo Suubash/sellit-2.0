@@ -2,8 +2,14 @@ import { ProductCard, ProductChip } from "../components/shared";
 import { Category } from "../components/unshared";
 import { products } from "../data/products";
 import { categories } from "../data/categories";
+import { useAppSelector, useAppDispatch } from "../hooks/reduxHook";
+import { RootState } from "redux/store";
 
 export const Home = () => {
+  const dispatch = useAppDispatch();
+  const cartProducts = useAppSelector((state: RootState) => state.cart);
+  console.log({ cartProducts });
+
   return (
     <div className="bg-gradient-to-b from-dark-secondary to-dark">
       <div className="flex gap-4 overflow-auto padding-custom scrollbar-hide">

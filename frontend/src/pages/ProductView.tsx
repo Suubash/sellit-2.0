@@ -1,31 +1,63 @@
 import { MapPinIcon, UserIcon } from "@heroicons/react/24/solid";
+import { IProduct } from "interfaces/category";
 import { Button } from "../components/shared/Button";
+import { useAppDispatch } from "../hooks/reduxHook";
+import { useParams } from "react-router-dom";
+import { products } from "../data/products";
+import { owners } from "../data/owners";
+import { addToCart } from "../redux/slices/cartSlice";
 
 export const ProductView = () => {
+  const dispatch = useAppDispatch();
+
+  const { id } = useParams<string>();
+  const productId = Number(id) - 1;
+
+  const handleAddToCart = () => {
+    console.log("Added to cart");
+    const prod: IProduct = {
+      id: products[productId].id,
+      image: products[productId].image,
+      title: products[productId].title,
+      price: products[productId].price,
+      owner_id: products[productId].owner_id,
+      location: {
+        place: products[productId].location.place,
+        street: products[productId].location.street,
+      },
+    };
+    dispatch(addToCart(prod));
+  };
+
+  // Finding the owner of the particular product
+  const owner = owners.find(
+    (owner) => products[productId].owner_id === owner.id
+  );
+
   return (
     <div className="text-light padding-custom leading-tight tracking-tight bg-gradient-to-b from-dark-secondary via-dark to-dark">
       <div className="w-full h-44 rounded-t-sm relative">
         <img
           className="h-full w-full object-cover rounded-t-sm"
-          src="https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="Test alt"
+          src={products[productId].image}
+          alt={products[productId].title}
         />
         <div className="absolute left-0 right-0 bottom-0 h-32 bg-gradient-to-b from-transparent via-transparent to-dark rounded-sm" />
       </div>
       <div className="pt-10">
         <p className="text-xs text-light-secondary flex items-center gap-2 mb-2 select-none">
-          <span>NPR 2,00,000</span>
+          <span>{products[productId].price}</span>
           <span>•</span>
           <MapPinIcon className="w-3" />
-          <span>Kathmandu, Nepal</span>
+          <span>{products[productId].location.place}</span>
         </p>
         <h1 className="text-2xl font-bold line-clamp-1 select-none">
-          Apple iPhone 13 Pro
+          {products[productId].title}
         </h1>
       </div>
 
       <div className="pt-10 space-y-2">
-        <Button>Buy Now</Button>
+        <Button onClick={handleAddToCart}>ADD TO CART</Button>
         <Button variant="secondary">Cancel</Button>
       </div>
 
@@ -85,12 +117,14 @@ export const ProductView = () => {
             <UserIcon className="w-20" />
           </div>
           <div>
-            <h2 className="text-xl font-bold select-none">Subhash Chaudhary</h2>
+            <h2 className="text-xl font-bold select-none">
+              {owner?.full_name}
+            </h2>
             <p className="text-light-secondary font-semibold text-xs select-none">
-              subash@gmail.com
+              {owner?.email}
             </p>
             <p className="text-light-secondary font-bold text-xs select-none">
-              +977 9876543210
+              +977 {owner?.contact}
             </p>
           </div>
         </div>

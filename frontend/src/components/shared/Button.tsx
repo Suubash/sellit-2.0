@@ -4,13 +4,15 @@ import React from "react";
 interface IButton {
   variant?: String;
   children: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button = (props: IButton) => {
-  const { variant, children } = props;
+  const { variant, children, onClick } = props;
 
   return (
     <button
+      onClick={onClick}
       className={cn(
         "w-full rounded-sm h-14 font-semibold select-none",
         variant !== "secondary"
