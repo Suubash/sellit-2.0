@@ -8,6 +8,7 @@ import {
   Profile,
   Notification,
   Register,
+  Login,
 } from "../pages";
 import { store } from "../redux/store";
 import { Provider } from "react-redux";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </Provider>
