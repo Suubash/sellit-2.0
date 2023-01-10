@@ -1,7 +1,10 @@
 import { FormItem, Button } from "../components/shared";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 export const Register = () => {
+  const navigate = useNavigate();
+
   // Submit button
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,7 +49,12 @@ export const Register = () => {
 
         <p className="mt-4 flex gap-2 items-center">
           <span>Already have an account?</span>
-          <span className="text-accent underline font-medium">Login here</span>
+          <span
+            onClick={() => navigate("/login")}
+            className="text-accent underline font-medium"
+          >
+            Login here
+          </span>
         </p>
       </div>
     </div>
