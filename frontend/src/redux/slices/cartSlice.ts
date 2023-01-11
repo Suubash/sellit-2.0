@@ -9,7 +9,20 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<IProduct>) => {
-      console.log("Added only in console");
+      const index = state.findIndex(
+        (product) => product.id === action.payload.id
+      );
+
+      if (index === -1) {
+        return [...state, action.payload];
+      } else {
+        const newState: any = [...state];
+        newState[index] = {
+          ...newState[index],
+          quantity: newState[index].quantity + 1,
+        };
+        return newState;
+      }
     },
   },
 });

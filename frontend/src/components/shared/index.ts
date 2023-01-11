@@ -5,3 +5,4 @@ export * from "./ProductChip";
 export * from "./Alert";
 export * from "./FormItem";
 export * from "./Button";
+export * from "./CartProduct";

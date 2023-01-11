@@ -1,16 +1,21 @@
 import { MapPinIcon, UserIcon } from "@heroicons/react/24/solid";
 import { IProduct } from "interfaces/category";
 import { Button } from "../components/shared/Button";
-import { useAppDispatch } from "../hooks/reduxHook";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { useParams } from "react-router-dom";
 import { products } from "../data/products";
 import { owners } from "../data/owners";
 import { addToCart } from "../redux/slices/cartSlice";
+import { RootState } from "../redux/store";
 
 export const ProductView = () => {
   const dispatch = useAppDispatch();
+  const all_carts = useAppSelector((state: RootState) => state.cart);
 
   const { id } = useParams<string>();
+
+  const ifExists = all_carts.find((cart) => cart.id === id);
+
   const productId = Number(id) - 1;
 
   const handleAddToCart = () => {
@@ -57,7 +62,9 @@ export const ProductView = () => {
       </div>
 
       <div className="pt-10 space-y-2">
-        <Button onClick={handleAddToCart}>ADD TO CART</Button>
+        <Button onClick={handleAddToCart}>
+          {!ifExists ? "ADD TO CART" : "ADD SUCCESSFULL"}
+        </Button>
         <Button variant="secondary">Cancel</Button>
       </div>
 

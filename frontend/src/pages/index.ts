@@ -5,3 +5,4 @@ export * from "./Profile";
 export * from "./Notification";
 export * from "./Register";
 export * from "./Login";
+export * from "./Cart";
