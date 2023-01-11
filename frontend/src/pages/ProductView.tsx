@@ -14,7 +14,9 @@ export const ProductView = () => {
 
   const { id } = useParams<string>();
 
-  const ifExists = all_carts.find((cart) => cart.id === id);
+  const ifAlreadyExists = all_carts.find((cart) => cart.id === id)
+    ? true
+    : false;
 
   const productId = Number(id) - 1;
 
@@ -62,8 +64,8 @@ export const ProductView = () => {
       </div>
 
       <div className="pt-10 space-y-2">
-        <Button onClick={handleAddToCart}>
-          {!ifExists ? "ADD TO CART" : "ADD SUCCESSFULL"}
+        <Button onClick={handleAddToCart} disabled={ifAlreadyExists}>
+          {!ifAlreadyExists ? "ADD TO CART" : "ADDED TO CART"}
         </Button>
         <Button variant="secondary">Cancel</Button>
       </div>
