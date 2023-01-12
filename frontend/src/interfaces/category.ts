@@ -9,6 +9,6 @@ export interface IProduct {
   owner_id: string;
   title: string;
   image: string;
-  price: string;
+  price: number;
   location: { place: string; street: string };
 }

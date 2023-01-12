@@ -1,14 +1,16 @@
 import React from "react";
 import { RootState } from "../redux/store";
 import { useAppSelector } from "../hooks/reduxHook";
-import { CartProduct } from "../components/shared";
+import { Button, CartProduct } from "../components/shared";
 
 export const Cart = () => {
   const all_cart_items = useAppSelector((state: RootState) => state.cart);
 
-  React.useEffect(() => {
-    console.log({ all_cart_items });
-  }, [all_cart_items]);
+  const total_price = all_cart_items.reduce(
+    (total, current) => total + current.price,
+    0
+  );
+
   return (
     <div className="bg-gradient-to-b from-dark-secondary to-dark text-light">
       <div className="pt-10 padding-custom-x">
@@ -17,7 +19,20 @@ export const Cart = () => {
         </h2>
 
         {all_cart_items.length ? (
-          all_cart_items.map((item) => <CartProduct key={item.id} {...item} />)
+          <div className="space-y-6">
+            <div className="space-y-2">
+              {all_cart_items.map((item) => (
+                <CartProduct key={item.id} {...item} />
+              ))}
+            </div>
+            <div className="border-t-2 border-dark-tertiary space-y-4">
+              <div className="pt-4 flex items-center justify-between text-base font-semibold">
+                <span>Total Payable:</span>
+                <span className="text-accent ">NPR {total_price}</span>
+              </div>
+              <Button>CHECKOUT & PAY</Button>
+            </div>
+          </div>
         ) : (
           <p className="text-light-secondary">
             You don&apos;t have any items in your cart
